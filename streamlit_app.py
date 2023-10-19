@@ -43,10 +43,6 @@ try:
 except URLError as e:
     streamlit.error()
 
-# take the json version of the response and normalize it
-#output it the screen as a table
-
-
 #don't run anything past here while we troubleshoot
 #streamlit.stop()
 
@@ -60,7 +56,7 @@ def get_fruit_load_list():
 # Add a button to load the fruit
 if streamlit.button('Get Fruit Load List'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-    my_data_rows = get_fruit_laod_list()
+    my_data_rows = get_fruit_load_list()
     streamlit.dataframe(my_data_rows)
 
 #Additional text box
